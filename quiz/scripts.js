@@ -96,7 +96,7 @@ function checkAnswer(evento) { // escolher uma resposta com o evento de clique e
     // se a respota escolhida é igual a resposta correta da pergunta atual
     if (evento.target.innerText === questions[currentQuestion].answer) {
         score++;
-        scoreElement.innerText = `Pontuação ${score}`; // pontuação atualizada
+        scoreElement.innerText = `Pontuação: ${score}`; // pontuação atualizada
         alert("Correto!");
     } else {
         wrong++;
@@ -113,7 +113,7 @@ choiceElements.forEach((btn) => { // percorre cada elemento do choiceElements, o
 nextButton.addEventListener("click", () => { // adiciona um ouvinte de eventos ao elemento nextButton usando esse método do addEventListener, no caso ouvir/perceber o evento de quando clica no botão nextButton
     if (!answerChosen) {// verifica se uma resposta foi escolhida para a pergunta atual.
         // se não
-        alert("Por favor, resposta a pergunta!")
+        alert("Por favor, responda a pergunta!")
         return;
     }
 
