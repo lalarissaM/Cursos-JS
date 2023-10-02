@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Dia da Música</title>
+    <style>
+        body {
+            background-color: rgb(230, 64, 91);
+        }
+        .painel {
+            width: 500px;
+            height: 500px;
+            background-color: white;
+            margin: auto;
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 50px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        #tohear {
+            height: 80px;
+            width: 80px;
+            background-color: pink;
+            border: 2px solid white;
+            border-radius: 50px;
+            color: black;
+            margin: 0 auto; /* Centralizar horizontalmente */
+            display: flex;
+            justify-content: center; /* Centralizar verticalmente */
+            align-items: center; /* Centralizar verticalmente */
+            margin-left: 160px;
+        }
+        /* onmouseover = um evento onmouseover do botão toreplace associado a ele que chama a função JavaScript fuja() quando o mouse passa por cima dele.*/
+        #toreplace {
+            position: absolute; /* pro botão mover livremente na tela */
+            height: 80px;
+            width: 80px;
+            background-color: pink;
+            border: 2px solid white;
+            border-radius: 50px;
+            color: black;
+            left: 50%; /* Centraliza horizontalmente */
+            top: 14.5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: -0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="painel"> 
+        <h1>Feliz Dia da Música!</h1>
+       
+
+        <a href="https://www.youtube.com/watch?v=6uvUTu716rU"><button id="tohear"> I'm feeling lonely (lonely)! </button></a>
+        <a href="https://www.youtube.com/"><button onmouseover="fuja()" id="toreplace"> Trocar música! </button></a>
+        
+        <img src="https://i.pinimg.com/originals/ab/4d/e0/ab4de08ece783245be1fb1f7fde94c6f.gif" alt="">
+
+        <h5>Now I'm crying in my room!</h5>
+
+    </div>
+
+    <script>
+        function fuja() {
+            let botaotoReplace = document.getElementById("toreplace"); /* pega o botão com o id "toreplace" na página*/
+        
+            /*garante que o botão não saia da visão da tela*/
+            let larguraJanela = window.innerWidth; /*obtém a largura (horizontal) da janela do navegador*/
+            let alturaJanela = window.innerHeight; /*obtém a altura (vertical) da janela do navegador*/
+
+            /*calcula a posição máxima (x e y), até onde o botão pode se mover na janela sem sair dela*/
+            let maxX = larguraJanela - botaotoReplace.offsetWidth; /*largura da janela - largura do botão */
+            let maxY = alturaJanela - botaotoReplace.offsetHeight;
+
+            /*gera números aleatórios para x e y dentro do limite imposto anteriormente, ou seja, o botão se move para uma posição diferente toda vez que passar o mouse sobre ele*/
+            let aleatorioX = Math.floor(Math.random() * maxX);
+            let aleatorioY = Math.floor(Math.random() * maxY);
+
+            /*move o botão para a nova posição aleatória dentro da largura (horizontal) e altura(vertical) */
+            botaotoReplace.style.left = aleatorioX + "px";
+            botaotoReplace.style.top = aleatorioY + "px";
+        }
+    </script>
+
+
+</body>
+</html>
