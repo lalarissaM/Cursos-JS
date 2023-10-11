@@ -38,9 +38,21 @@
 }
 
 .login__label {
-
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
+.input {
+    width: 100%;
+    background-color: var(--light-grey);
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 0.9em;
+    padding: 25px 10px 10px;
+    font-weight: 600;
+}
 
 
 
