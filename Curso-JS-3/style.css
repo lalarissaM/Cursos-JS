@@ -25,6 +25,8 @@
     align-items: center;
     max-width: 500px;
     min-height: 100vh;
+    background-color: #CF3C3F;
+    padding: clamp(35px, 8%, 70px); /* min, preferencia, max */
 }
 
 .login__logo {
@@ -35,6 +37,7 @@
 .login__title {
     color: var(--deep-grey);
     font-size: 1.5em;
+    margin-bottom: 30px;
 }
 
 .login__label {
@@ -52,6 +55,17 @@
     font-size: 0.9em;
     padding: 25px 10px 10px;
     font-weight: 600;
+    color: var(--deep-grey);
+}
+
+.login__label span {
+    position: absolute;
+    font-size: 0.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--medium-grey);
+    margin: 20px;
+    cursor: text;
 }
 
 
